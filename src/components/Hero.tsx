@@ -1,0 +1,100 @@
+import { ArrowRight, CheckCircle2, Download } from "lucide-react";
+import HeroVideoPlayer from "./HeroVideoPlayer";
+import { trackMetaEvent } from "../lib/metaPixel";
+import { useCopy } from "../i18n/LocaleContext";
+
+export default function Hero() {
+  const { copy } = useCopy();
+  const checklist = copy.hero.checklist.map((label) => ({
+    label,
+    icon: <CheckCircle2 className="w-4 h-4 shrink-0 text-green-500" />,
+  }));
+
+  return (
+    <section className="relative overflow-hidden bg-black pt-8 pb-20 md:pt-10" id="hero">
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-[128px]" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[128px]" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 gap-y-6 max-lg:justify-items-center max-lg:gap-y-3 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:grid-rows-[auto_auto_auto] lg:justify-items-stretch lg:gap-x-10 lg:gap-y-3 lg:items-center">
+          <div className="order-1 min-w-0 w-full max-w-xl max-lg:mx-auto max-lg:text-center lg:order-none lg:col-start-1 lg:row-start-1 lg:max-w-none lg:pr-4 lg:text-left">
+            <div className="mb-4 hidden max-w-full items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.04] py-1.5 pl-1.5 pr-3.5 backdrop-blur-sm sm:gap-3 sm:py-2 sm:pl-2 sm:pr-4 lg:inline-flex">
+              <span
+                className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-amber-500/25 bg-gradient-to-br from-amber-500/15 via-purple-500/10 to-transparent text-base shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] sm:h-9 sm:w-9 sm:text-lg"
+                aria-hidden
+              >
+                💎
+                <span className="absolute -right-0.5 -top-0.5 h-2 w-2 animate-pulse rounded-full bg-amber-400 ring-2 ring-black/80" />
+              </span>
+              <span className="min-w-0 text-left text-[10px] font-semibold leading-snug text-gray-200 sm:text-xs">
+                {copy.hero.badge}
+              </span>
+            </div>
+
+            <h1 className="mb-5 max-w-xl text-[2rem] font-black leading-[1.08] tracking-tight text-white max-lg:mx-auto sm:text-[2.35rem] sm:leading-[1.06] md:mb-6 md:text-5xl lg:mx-0 lg:text-[3.5rem] lg:leading-[1.05]">
+              {copy.hero.titleLine1}
+              <br />
+              {copy.hero.titleBeforeAccent}{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-red-500 to-rose-950">
+                {copy.hero.titleAccent}
+              </span>
+            </h1>
+
+            <p className="mb-0 max-w-lg text-sm leading-relaxed text-gray-400 max-lg:mx-auto sm:text-base md:text-lg lg:mx-0">
+              {copy.hero.lead}
+              <span className="hidden lg:inline">{copy.hero.leadDesktop}</span>
+            </p>
+          </div>
+
+          <div className="relative order-2 min-w-0 w-full max-w-xl max-lg:mb-3 max-lg:mt-0 lg:order-none lg:col-start-2 lg:row-span-3 lg:row-start-1 lg:max-w-none lg:self-center">
+            <p className="mb-1.5 text-xs font-medium leading-snug text-gray-500 max-lg:text-center sm:text-[13px] lg:text-left">
+              {copy.hero.videoCaption}
+            </p>
+            <div className="relative z-10 w-full">
+              <HeroVideoPlayer />
+            </div>
+            <div className="pointer-events-none absolute inset-0 -z-10 bg-purple-500/10 rounded-full blur-[100px] max-lg:hidden" aria-hidden />
+          </div>
+
+          <div className="hero-enter order-3 min-w-0 w-full max-w-xl max-lg:mx-auto max-lg:text-center lg:order-none lg:col-start-1 lg:row-start-2 lg:row-span-2 lg:max-w-none lg:pr-4 lg:text-left">
+            <p className="mb-4 max-w-lg text-sm leading-relaxed text-gray-400 max-lg:mx-auto max-lg:text-center sm:text-base lg:mx-0 lg:mb-6 lg:text-left">
+              {copy.hero.productsLine}
+            </p>
+            <div className="mb-10 max-lg:mb-0 lg:mb-10">
+              <p className="mb-4 max-w-lg text-sm leading-relaxed text-gray-400 max-lg:mx-auto max-lg:text-center sm:text-base lg:mx-0 lg:mb-6 lg:text-left">
+                {copy.hero.deliveryLine}
+              </p>
+              <div className="flex flex-col items-center gap-4 sm:flex-row sm:flex-nowrap lg:items-stretch lg:justify-start">
+              <a
+                href="#comprar"
+                onClick={() => trackMetaEvent("Lead", { content_name: "hero_cta" })}
+                className="animate-green-cta-pulse relative shrink-0 whitespace-nowrap inline-flex bg-gradient-to-br from-emerald-400 via-green-500 to-emerald-700 px-6 py-4 text-base max-[360px]:px-4 max-[360px]:text-sm font-black text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.25)] transition-[transform,colors] hover:scale-105 active:scale-[0.97] hover:from-emerald-300 hover:via-green-400 hover:to-emerald-600 items-center justify-center gap-2 rounded-2xl border border-emerald-300/40 lg:px-8 lg:text-lg"
+              >
+                {copy.hero.ctaPrimary} <ArrowRight className="h-5 w-5 shrink-0 text-white" />
+              </a>
+              <a
+                href="#gallery"
+                className="hidden shrink-0 whitespace-nowrap rounded-2xl border border-transparent bg-white px-6 py-4 text-base font-bold text-black shadow-[0_0_20px_rgba(255,255,255,0.15)] transition-all hover:bg-gray-200 md:flex items-center justify-center gap-2 lg:px-8 lg:text-lg"
+              >
+                {copy.hero.ctaSecondary} <Download className="h-5 w-5 shrink-0 text-black" />
+              </a>
+              </div>
+              <p className="mt-2.5 text-center text-[11px] font-medium leading-snug text-gray-500 md:hidden">
+                {copy.hero.mobileUrgency}
+              </p>
+            </div>
+
+            <div className="grid max-lg:mx-auto max-lg:mt-8 max-lg:max-w-sm grid-cols-2 gap-x-4 gap-y-3 lg:mx-0 lg:mt-0 lg:max-w-none lg:grid-cols-4 lg:gap-x-6 lg:gap-y-0">
+              {checklist.map((item, i) => (
+                <div key={i} className="flex min-w-0 items-center justify-center gap-2 text-xs font-medium text-gray-400 sm:text-sm lg:justify-start lg:text-sm">
+                  {item.icon}
+                  <span className="leading-snug">{item.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
