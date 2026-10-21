@@ -5,7 +5,7 @@ import { trackMetaEvent } from "../lib/metaPixel";
 import { useCopy } from "../i18n/LocaleContext";
 
 const HOTMART_CHECKOUT =
-  "https://pay.hotmart.com/B97388036V?off=d842qxqc&checkoutMode=10";
+  "https://pay.hotmart.com/C97387804T?off=1ba1tnm0&checkoutMode=10";
 
 export default function PricingCTA() {
   const { copy } = useCopy();
