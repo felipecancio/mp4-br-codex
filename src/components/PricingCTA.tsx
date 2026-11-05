@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
-import { Check, Zap, Shield, Rocket, Timer } from "lucide-react";
+import { Check, Zap, Shield, Rocket } from "lucide-react";
 import FloatingProductBox from "./FloatingProductBox";
+import BlackFridayBadge from "./BlackFridayBadge";
 import { trackMetaEvent } from "../lib/metaPixel";
 import { useCopy } from "../i18n/LocaleContext";
 
@@ -55,10 +56,9 @@ export default function PricingCTA() {
             {copy.pricing.updatesNote}
           </p>
 
-          <p id="oferta-desconto" className="mx-auto mb-5 flex w-fit max-w-full scroll-mt-28 items-center justify-center gap-2 px-4 py-3 text-center text-sm font-black uppercase leading-snug tracking-wide text-amber-200 sm:mb-6 sm:px-6 sm:text-lg">
-            <Timer className="h-5 w-5 shrink-0 text-amber-400 sm:h-6 sm:w-6" aria-hidden />
-            <span>{copy.pricing.limitedOffer}</span>
-          </p>
+          <div id="oferta-desconto" className="mb-5 scroll-mt-28 sm:mb-6">
+            <BlackFridayBadge />
+          </div>
 
           <motion.a
             href={HOTMART_CHECKOUT}

@@ -89,14 +89,11 @@ export default function Navbar() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between gap-2 sm:gap-3">
             <div className="flex min-w-0 flex-1 items-center">
-              <span className="min-w-0 text-[10px] font-black uppercase leading-tight tracking-wide text-white sm:text-xs md:hidden">
-                <span className="text-orange-400">{copy.navbar.mobileOffer}</span>
-                {copy.navbar.mobileRest}
-              </span>
-              <span className="hidden min-w-0 text-base font-black uppercase leading-tight tracking-wide text-white md:inline lg:text-lg">
-                <span className="text-orange-400">{copy.navbar.desktopOfferBefore}</span>
-                {copy.navbar.desktopMid}
-                <span className="text-orange-400">{copy.navbar.desktopOfferAfter}</span>
+              <span className="min-w-0 text-xs font-extrabold uppercase leading-tight tracking-wide text-orange-400 sm:text-sm md:text-base lg:text-lg">
+                {copy.navbar.blackFridayLabel}{" "}
+                <span className="inline-block whitespace-nowrap text-sm font-black italic tracking-tight text-white sm:text-base lg:text-lg">
+                  {copy.navbar.blackFridayDiscount}
+                </span>
               </span>
             </div>
 

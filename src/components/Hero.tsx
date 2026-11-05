@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle2, Download } from "lucide-react";
 import HeroVideoPlayer from "./HeroVideoPlayer";
+import BlackFridayBadge from "./BlackFridayBadge";
 import { trackMetaEvent } from "../lib/metaPixel";
 import { useCopy } from "../i18n/LocaleContext";
 
@@ -39,6 +40,10 @@ export default function Hero() {
                 {copy.hero.titleAccent}
               </span>
             </h1>
+
+            <div className="mb-4">
+              <BlackFridayBadge />
+            </div>
 
             <p className="mb-0 max-w-lg text-sm leading-relaxed text-gray-400 max-lg:mx-auto sm:text-base md:text-lg lg:mx-0">
               {copy.hero.lead}

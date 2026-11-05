@@ -5,11 +5,8 @@ export type Locale = "pt-BR";
 export type Copy = {
   meta: { title: string; description: string };
   navbar: {
-    mobileOffer: string;
-    mobileRest: string;
-    desktopOfferBefore: string;
-    desktopMid: string;
-    desktopOfferAfter: string;
+    blackFridayLabel: string;
+    blackFridayDiscount: string;
     content: string;
     themes: string;
     benefits: string;
@@ -106,7 +103,6 @@ export type Copy = {
     promoPrice: string;
     checklist: string[];
     updatesNote: string;
-    limitedOffer: string;
     buyNow: string;
     securePay: string;
     instantDelivery: string;
@@ -142,11 +138,8 @@ export const ptBrCopy: Copy = {
     "description": "Mais de 40 mil artes em alta resolução e 65 temas para designers, gráficas e personalizados. Acesso vitalício pelo Drive, pagamento único e 3 bônus."
   },
   "navbar": {
-    "mobileOffer": "50% OFF",
-    "mobileRest": " + ATUALIZAÇÕES GRÁTIS",
-    "desktopOfferBefore": "50% OFF",
-    "desktopMid": " + ATUALIZAÇÕES ",
-    "desktopOfferAfter": "GRÁTIS",
+    "blackFridayLabel": "BLACK FRIDAY",
+    "blackFridayDiscount": "50% OFF HOJE",
     "content": "CONTEÚDO",
     "themes": "65 TEMAS",
     "benefits": "BENEFÍCIOS",
@@ -298,12 +291,12 @@ export const ptBrCopy: Copy = {
   "pricing": {
     "urgencyBadge": "Aproveite: oferta por tempo limitado",
     "title": "MEGA PACK 4.0",
-    "promoBefore": "Amplie sua biblioteca criativa com",
-    "promoHighlight": "50% de desconto",
+    "promoBefore": "Amplie sua biblioteca criativa",
+    "promoHighlight": "pela metade do preço na nossa super Black Friday",
     "promoMid": "e tenha acesso vitalício ao Mega Pack 4.0, com",
     "promoUpdates": "todas as futuras atualizações incluídas",
     "promoEnd": ". Tudo isso com",
-    "promoPrice": "pagamento único!",
+    "promoPrice": "pagamento único e 50% OFF!",
     "checklist": [
       "Mais de 40 mil artes em alta resolução para impressões de até 2,5 metros",
       "65 temas para diversificar seu catálogo",
@@ -317,7 +310,6 @@ export const ptBrCopy: Copy = {
       "Acesso vitalício pelo Drive e suporte pós-venda"
     ],
     "updatesNote": "Sua biblioteca continua crescendo: todas as futuras atualizações do Mega Pack estão incluídas, sem mensalidade e sem custo adicional.",
-    "limitedOffer": "50% de desconto por tempo limitado",
     "buyNow": "COMPRAR AGORA",
     "securePay": "Compra segura",
     "instantDelivery": "Acesso imediato",
